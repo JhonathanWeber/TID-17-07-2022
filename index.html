@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='css/style.css' />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto' />
+
+
+    <title>Animated SVG With CSS</title>
+</head>
+
+<body class="aligningCenter">
+    <header>
+        <small>@jhonspage</small>
+    </header>
+    <main>
+        <article>
+            <section class="aligningCenter">
+                <h1><span id="animated">Animated</span> SVG with CSS</h1>
+                <p>
+                    <blockquote cite="https://www.youtube.com/watch?v=UTHgr6NLeEw">
+                        <p>
+                            Case study taken from youtube <a href="https://www.youtube.com/watch?v=UTHgr6NLeEw"><strong>Fireship</strong></a>
+                        </p>
+                    </blockquote>
+                </p>
+                <div class="mainContent aligningCenter">
+                    
+                    <svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="triangles">
+                            <g id="lightGroup">
+                                <path id="light1" opacity="0.7"
+                                    d="M45.1746 46.7892C46.4601 47.5675 46.4601 49.4325 45.1746 50.2108L20.2859 65.2813C18.953 66.0883 17.25 65.1286 17.25 63.5704L17.25 33.4295C17.25 31.8713 18.953 30.9117 20.2859 31.7187L45.1746 46.7892Z" />
+                            </g>
+                            <g id="darkGroup">
+                                <path id="dark2" opacity="0.7"
+                                    d="M57.1746 47.7892C58.46 48.5675 58.46 50.4325 57.1746 51.2108L32.2859 66.2813C30.953 67.0883 29.25 66.1286 29.25 64.5704L29.25 34.4295C29.25 32.8713 30.953 31.9117 32.2859 32.7187L57.1746 47.7892Z" />
+                                <path id="dark1" opacity="0.7"
+                                    d="M45.1746 46.7892C46.46 47.5675 46.46 49.4325 45.1746 50.2108L20.2859 65.2813C18.953 66.0883 17.25 65.1286 17.25 63.5704L17.25 33.4295C17.25 31.8713 18.953 30.9117 20.2859 31.7187L45.1746 46.7892Z" />
+                            </g>
+                        </g>
+                    </svg>
+
+            </section>
+        </article>
+        </div>
+    </main>
+    <script>
+        const svg = document.getElementById('triangles')
+        svg.onclick = (e) => {
+            const colors = ['red', 'blue', 'green', 'orange', 'pink', 'purple', 'yellow']
+            const rando = () => colors[Math.floor(Math.random() * colors.length)]
+            document.documentElement.style.cssText = `
+                    --dark-color: ${rando()};
+                    --light-color: ${rando()};
+                `
+        }
+    </script>
+</body>
+
+</html>
