@@ -91,13 +91,17 @@ div.mainContent {
 
 svg {
   cursor: pointer;
-  margin-left: 15vw;
+  /* margin-left: 15vw; */
   transform: scale(250%);
+  
 }
+
 
 /***************************************************** 
 animations 
 ******************************************************/
+
+
 
 #triangles {
   margin-top: 100px;
@@ -113,12 +117,18 @@ animations
 
 #dark1,
 #light1,
-#dark2 {
+#dark2,
+#triangles {
   transition: all 1s ease;
 }
 
 #dark1 {
-  transform: translateX(-100%);
+  transform: translateX(-80%);
+  opacity: 0;
+}
+
+svg:hover #triangles {
+  transform: translateX(-10%)
 }
 
 svg:hover #light1 {
@@ -132,5 +142,6 @@ svg:hover #dark2 {
 
 svg:hover #dark1 {
   transform: translateX(8%);
+  opacity: 60%;
 }
 
