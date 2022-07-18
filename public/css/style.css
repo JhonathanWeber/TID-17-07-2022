@@ -7,11 +7,9 @@
 :root {
   --light-color: #73e6ff;
   --dark-color: #635bff;
-
   
   font-size: 62.5%;
 }
-
 
 body {
   font-family: Roboto;
@@ -25,8 +23,29 @@ body {
 }
 
 header {
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
   font-size: large;
+  background-color: var(--dark-color);
+  width: 100%;
+  color: whitesmoke;
+  padding: 0.2rem;
+}
+
+nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width:100%;
+}
+
+li {
+  list-style: none;  
+}
+
+main {
+  margin-inline: 20%;
+  height:100vh;
 }
 
 section {
@@ -41,16 +60,22 @@ main h1 #animated {
 }
 
 
-main h1 {
-  font-size: 4rem;
+h1 {
+  font-size: 5.2rem;
   font-weight: 100;
 }
 
-main p {
+h2 {
+  font-size: 2.6rem;
+
+}
+
+p {
     font-size: 1.6rem;
 
 }
-a {
+
+a,abbr {
     text-decoration: none;
     color: var(--dark-color);
 }
@@ -69,6 +94,10 @@ svg {
   margin-left: 15vw;
   transform: scale(250%);
 }
+
+/***************************************************** 
+animations 
+******************************************************/
 
 #triangles {
   margin-top: 100px;
@@ -104,3 +133,4 @@ svg:hover #dark2 {
 svg:hover #dark1 {
   transform: translateX(8%);
 }
+
