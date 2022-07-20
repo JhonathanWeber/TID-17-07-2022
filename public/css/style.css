@@ -7,12 +7,17 @@
 :root {
   --light-color: #73e6ff;
   --dark-color: #635bff;
-  
+
+  --title-dark: #222222;
+  --text-white: whitesmoke;
+
   font-size: 62.5%;
 }
 
 body {
   font-family: Roboto;
+  color: var(--title-dark);
+  height: 100vh;
 }
 
 .aligningCenter {
@@ -23,42 +28,55 @@ body {
 }
 
 header {
-  margin-bottom: 10rem;
+  margin-bottom: 10vh;
   font-size: large;
   background-color: var(--dark-color);
   width: 100%;
-  color: whitesmoke;
-  padding: 0.2rem;
+  color: var(--text-white);
 }
 
-nav ul{
+nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  width:100%;
+  /* margin-inline: 10px; */
+  list-style: none;
 }
 
-li {
-  list-style: none;  
+header li {
+  margin-inline: 1rem;
+  margin-block: 1rem;
+}
+
+li.li-css a {
+  text-decoration: none;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li a,
+i {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 main {
   margin-inline: 20%;
-  height:100vh;
+  height: 900px;
 }
 
 section {
   gap: 2rem;
-
 }
 
 main h1 #animated {
-    color: var(--dark-color);
+  color: var(--dark-color);
 
-    font-weight: 900;
+  font-weight: 900;
 }
-
 
 h1 {
   font-size: 5.2rem;
@@ -67,41 +85,53 @@ h1 {
 
 h2 {
   font-size: 2.6rem;
-
 }
 
 p {
-    font-size: 1.6rem;
-
+  font-size: 1.6rem;
 }
 
-a,abbr {
-    text-decoration: none;
-    color: var(--dark-color);
+main a,
+abbr {
+  text-decoration: none;
+  color: var(--dark-color);
 }
 
 div.mainContent {
-  border: 2px solid;
   border-radius: 1.5rem;
-  width: 300px;
-  height: 200px;
-  padding-inline: 20px;
-
+  padding: calc(2.5vw * 3.14) calc(4.5vw * 3.14);
+  background-image: linear-gradient(150deg, #fafafa 30%, #dddddd);
+  box-shadow: 3px 3px 4px var(--title-dark);
 }
 
 svg {
   cursor: pointer;
-  /* margin-left: 15vw; */
-  transform: scale(250%);
-  
+  transform: scale(150%);
 }
 
-
 /***************************************************** 
-animations 
+animations titles and paragraphs
 ******************************************************/
 
+@keyframes animeTranslate {
+  0% {
+    translatex: -100%;
+    opacity: 0;
+  }
+  100% {
+    translatex: 0%;
+    opacity: 100%;
+  }
+}
 
+#titleTwo {
+  animation-name: animeTranslate;
+  animation-duration: 1s;
+}
+
+/***************************************************** 
+animations svg
+******************************************************/
 
 #triangles {
   margin-top: 100px;
@@ -128,7 +158,7 @@ animations
 }
 
 svg:hover #triangles {
-  transform: translateX(-10%)
+  transform: translateX(-10%);
 }
 
 svg:hover #light1 {
@@ -144,4 +174,3 @@ svg:hover #dark1 {
   transform: translateX(8%);
   opacity: 60%;
 }
-
