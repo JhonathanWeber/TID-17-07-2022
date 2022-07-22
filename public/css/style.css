@@ -14,18 +14,19 @@
   font-size: 62.5%;
 }
 
-body {
-  font-family: Roboto;
-  color: var(--title-dark);
-  height: 100vh;
-}
-
 .aligningCenter {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+body {
+  font-family: Roboto;
+  color: var(--title-dark);
+  height: 100vh;
+}
+
 
 header {
   margin-bottom: 10vh;
@@ -112,29 +113,101 @@ svg {
 /***************************************************** 
 animations titles and paragraphs
 ******************************************************/
-
-@keyframes animeTranslate {
+@keyframes title1 {
   0% {
-    translatex: -100%;
     opacity: 0;
+    transform: scale(0);
   }
   100% {
-    translatex: 0%;
+    transform: scale(1);
     opacity: 100%;
+    transition: ease;
+    animation-fill-mode: forwards;
   }
 }
 
-#titleTwo {
-  animation-name: animeTranslate;
-  animation-duration: 1s;
+@keyframes slipLeftToCenter {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slipRightToCenter {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+main h1,
+#paragraph1,
+#title2 {
+  transform: scale(0);
+  animation-fill-mode: forwards;
+}
+
+#title1 {
+  animation-name: title1;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+}
+
+#paragraph1 {
+  animation-name: slipLeftToCenter;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  transition: ease;
+}
+
+#title2 {
+  animation-name: slipRightToCenter;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  transition: ease;
 }
 
 /***************************************************** 
 animations svg
 ******************************************************/
 
+@keyframes slipBottomToCenter {
+  0% {
+    transform: translateY(100%);
+    opacity: 0%;
+  }
+  75% {
+    transform: translateY(-4%);
+  }
+  95% {
+    transform: translateY(1%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+}
+
+div.mainContent {
+  transform: translateY(400%);
+  opacity: 0%;
+  animation-fill-mode: forwards;
+}
+
+div.mainContent {
+  animation-name: slipBottomToCenter;
+  animation-duration: 1s;
+  animation-delay: 1.4s;
+  transition:cubic-bezier(0.19, 1, 0.22, 1);
+}
+
 #triangles {
   margin-top: 100px;
+  
 }
 
 #darkGroup {
